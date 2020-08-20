@@ -5,7 +5,19 @@ Returns: an integer
 def single_number(arr):
     # Your code here
 
-    pass
+    discovered = [];
+    count = [];
+
+    for i in arr:
+        if i not in discovered:
+            discovered.append(i);
+            count.append(1);
+        elif i in discovered:
+            count[discovered.index(i)] += 1;
+
+    print(discovered[count.index(1)]);
+
+    return discovered[count.index(1)];
 
 
 if __name__ == '__main__':
